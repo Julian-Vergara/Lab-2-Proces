@@ -1,2 +1,3 @@
-# Lab-2-Proces
-Segundo laboratorio de la asignatura de Procesamiento Digital de Señales de la Universidad Militar Nueva Granada / First laboratory for the Digital Signal Processing course at the Nueva Granada Military University.
+# Fisesta de coctel (separacion de señales)
+## Introducción
+El laboratorio consistió en el desarrollo de un código en Python para el análisis, procesamiento y separación de señales de audio en archivos .wav. Se utilizaron tres micrófonos que captaron las voces de tres personas ubicadas de forma estratégica. En este informe se presenta tanto el análisis temporal de las señales de audio como el análisis espectral en el dominio de la frecuencia. Además, se implementaron dos métodos diferentes para separar las señales: Análisis de Componentes Independientes (ICA) y Beamforming.
