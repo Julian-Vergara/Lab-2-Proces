@@ -20,9 +20,32 @@ def calc_desv(valores, media):
 
 # Función para calcular la relación señal-ruido (SNR)
 def snr(valores, ruido):
-    potv = np.mean(np.square(valores))
-    potr = np.mean(np.square(ruido))
+    fsum = 0
+    ssum = 0
+    potv = 0
+    potr = 0
+
+    # Calcular la potencia de la señal
+    for x in valores:
+        fsum += x ** 2
+    potv = fsum / len(valores)
+    
+    # Calcular la potencia del ruido
+    for x in ruido:
+        ssum += x ** 2
+    potr = ssum / len(ruido)
+
+    # Calcular el SNR en decibelios
     return 10 * np.log10(potv / potr)
+
+# Función para calcular la SNR de las señales separadas por FastICA
+def snr_ica(sigs_ica, r_sig):
+    snr_vals_ica = []
+    for i, sig in enumerate(sigs_ica):
+        snr_val = snr(sig, r_sig)
+        snr_vals_ica.append(snr_val)
+        print(f"SNR para la señal separada por FastICA {i+1}: {snr_val:.2f} dB")
+    return snr_vals_ica
 
 # Rutas a los archivos de audio de los tres micrófonos y el ruido ambiental
 wavs = ["j1 cel1-e.wav", "j2 cel2-e.wav", "j3 cel3-e.wav"]
@@ -59,6 +82,15 @@ for i, sig in enumerate(sigs):
     snr_val = snr(sig, r_sig)
     snr_vals.append(snr_val)
     print(f"SNR para el Micrófono {i+1}: {snr_val:.2f} dB")
+    
+# Cargar los archivos de audio separados por ICA
+sigs_ica = []
+for i in range(3):
+    sig_ica, _ = cargar_wav(f'Voice_{i+1}.wav')
+    sigs_ica.append(sig_ica[:min_length])
+
+# Calcular la SNR para las señales separadas por ICA
+snr_vals_ica = snr_ica(sigs_ica, r_sig)
 
 # Análisis temporal
 plt.figure(figsize=(12, 8))
@@ -93,6 +125,3 @@ for i, sig in enumerate(sigs):
     plt.xlim(lim_inf, lim_sup)
 plt.tight_layout()
 plt.show()
-
-
-
