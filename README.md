@@ -219,7 +219,15 @@ plt.show()
 ```
 ## Resultados 
 Los codigos realizados cuentan con difereentes funciones que se encargan de graficar las funciones en sus didferentes estados.
+
 ![Gráfico de la amplitud con respecto al tiempo](Sinn.png)
+
 En esta gráfica se puede observar el sonido teniendo en cuenta su amplitud y el tiempo de la grabación. Como se evidencia en las tres gráficas, se muestran los audios grabados con diferentes celulares. Cabe aclarar que el uso de distintos micrófonos influye significativamente, ya que la tercera muestra presenta una mayor amplitud y está menos afectada por el ruido. Si comparamos, podemos ver que las señales de las dos primeras están más contaminadas y tienen, en promedio, una amplitud 10 veces menor. Esto influyó en los resultados obtenidos tanto en el análisis ICA como en el beamforming.
+
 ![Gráfico de la amplitud con respecto a la frecuencia](freqq.png)
-Por otro lado la siguiente grafica muestar la amplitud con respecto a la frecuencia, esta se obtuvo al realizar la traformadad de fourier sobre los 
+
+Por otro lado, la siguiente gráfica muestra la amplitud con respecto a la frecuencia, la cual se obtuvo al realizar la transformada de Fourier sobre las señales extraídas de los archivos .wav. En esta gráfica se puede evidenciar que las voces humanas están en el rango de los 300 a 2000 Hz.
+
+![Gráfico de separacion por ICA](Sepp.png)
+
+Este gráfico representa las señales tras ser procesadas por el método ICA. Al escuchar los audios producidos por este proceso, se puede evidenciar que en cada uno de ellos una voz es más pronunciada. Sin embargo, hay una considerable distorsión y filtración de las otras voces en las grabaciones. Posiblemente, estos problemas se deban al uso de diferentes micrófonos.
