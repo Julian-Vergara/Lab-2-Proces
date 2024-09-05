@@ -157,7 +157,7 @@ plt.tight_layout()
 plt.show()
 ```
 ### Tercer codigo
-En el último código se realiza un análisis de las señales mediante beamforming, teniendo en cuenta las posiciones relativas. Este proceso se utiliza para procesar señales en direcciones específicas y se basa en el uso de múltiples señales captadas por varios receptores o emisores, como micrófonos o antenas. En este caso, el proceso se realizó utilizando la disposición espacial para dirigir las señales en direcciones específicas.
+En el último código se realiza un alineamiento de las señales mediante beamforming, teniendo en cuenta las posiciones relativas. Este proceso se utiliza para procesar señales en direcciones específicas y se basa en el uso de múltiples señales captadas por varios receptores o emisores, como micrófonos o antenas. En este caso, el proceso se realizó utilizando la disposición espacial para dirigir las señales en direcciones específicas.
 Es importante destacar que las dimensiones se ubicaron en un plano bidimensional, donde el primer micrófono se sitúa en el origen del plano (0,0).
 
 ```python
@@ -233,7 +233,7 @@ Por otro lado, la siguiente gráfica muestra la amplitud con respecto a la frecu
 Este gráfico representa las señales tras ser procesadas por el método ICA. Al escuchar los audios producidos por este proceso, se puede evidenciar que en cada uno de ellos una voz es más pronunciada. Sin embargo, hay una considerable distorsión y filtración de las otras voces en las grabaciones. Posiblemente, estos problemas se deban al uso de diferentes micrófonos.
 
 ![Gráfico de separacion por Beamforming](beamm.png)
-Por último, estos gráficos muestran los resultados del tratamiento de la señal mediante beamforming, teniendo en cuenta las posiciones relativas en un plano bidimensional con respecto al micrófono número uno. En este caso, los resultados no son los esperados. A pesar de que una de las voces esta más resaltada en todos los audios, el resultado general es poco confiable, ya que todos los audios son prácticamente iguales. Además, aunque una voz sea más notoria, el resto de las voces se filtran en el audio.
+Por último, estos gráficos muestran los resultados del tratamiento de la señal mediante beamforming, teniendo en cuenta las posiciones relativas en un plano bidimensional con respecto al micrófono número uno. Este proceso se realizó con el fin de mejorar la disposición de las señales para su tratamiento; sin embargo, estas señales no fueron utilizadas para el procesamiento final, ya que inicialmente se buscó observar el comportamiento de las señales sin ningúna alteracion de promedio. Es importante aclarar que este alineamiento presenta señales más limpias y concretas para su posterior tratamiento.
 
 ![Resultados SNR](ress.jpeg)
 
@@ -245,11 +245,9 @@ Una vez que se ejecuta el código que realiza el proceso de ICA, y posteriorment
 
 2. **Limitaciones del ICA**: Aunque el análisis de componentes independientes (ICA) logró resaltar una voz en cada señal, persistió la distorsión y la filtración de otras voces, probablemente debido a la variabilidad en los micrófonos.
 
-3. **Beamforming**: Los resultados del beamforming no fueron óptimos, ya que las voces no se aislaron correctamente. Las diferencias en la calidad de los micrófonos podrían haber influido en estos resultados.
+3. **Relación señal/ruido**: El tercer micrófono mostró la mejor relación señal/ruido. Aunque el procesamiento de ICA arrojó resultados aceptables, las diferencias entre los dispositivos impactaron el análisis final.
 
-4. **Relación señal/ruido**: El tercer micrófono mostró la mejor relación señal/ruido. Aunque el procesamiento de ICA arrojó resultados aceptables, las diferencias entre los dispositivos impactaron el análisis final.
-
-5. **Importancia de la consistencia**: Es crucial utilizar dispositivos de captura consistentes para obtener datos más precisos y mejorar el rendimiento de algoritmos como ICA y beamforming.
+4. **Importancia de la consistencia**: Es crucial utilizar dispositivos de captura consistentes para obtener datos más precisos y mejorar el rendimiento de algoritmos como ICA y beamforming.
 
 ## Requisitos
 - Pyton 3.9.0 ó superior
