@@ -235,7 +235,21 @@ Este gráfico representa las señales tras ser procesadas por el método ICA. Al
 ![Gráfico de separacion por Beamforming](beamm.png)
 Por último, estos gráficos muestran los resultados del tratamiento de la señal mediante beamforming, teniendo en cuenta las posiciones relativas en un plano bidimensional con respecto al micrófono número uno. En este caso, los resultados no son los esperados. A pesar de que una de las voces esta más resaltada en todos los audios, el resultado general es poco confiable, ya que todos los audios son prácticamente iguales. Además, aunque una voz sea más notoria, el resto de las voces se filtran en el audio.
 
+![Resultados SNR](ress.jpeg)
 
+Una vez que se ejecuta el código que realiza el proceso de ICA, y posteriormente se ejecuta el primero de los códigos, estos son los resultados obtenidos para la relación señal/ruido. Por un lado, en los resultados que relacionan el ruido con la señal original, se puede observar la calidad de la grabación: cuanto mayor es el valor en decibeles, mejor es la calidad. En este caso, se puede ver que el tercer micrófono tiene una respuesta más fiel, seguido por el primer micrófono, y finalmente el segundo micrófono, que presenta una calidad inferior. Por otro lado, los resultados de esta relación, considerando que la señal tratada por ICA es la señal principal y la señal original se tomó como ruido, muestran que, al estar todas dentro de un rango de valores muy similar y relativamente altos, el tratamiento de datos arroja resultados aceptables a pesar de las diferencias entre los dispositivos.
+
+## Conclusiones
+
+1. **Calidad de las grabaciones**: Las diferencias entre los micrófonos utilizados afectaron significativamente la calidad de las grabaciones. El tercer micrófono ofreció mayor fidelidad, mientras que el segundo presentó una calidad inferior.
+
+2. **Limitaciones del ICA**: Aunque el análisis de componentes independientes (ICA) logró resaltar una voz en cada señal, persistió la distorsión y la filtración de otras voces, probablemente debido a la variabilidad en los micrófonos.
+
+3. **Beamforming**: Los resultados del beamforming no fueron óptimos, ya que las voces no se aislaron correctamente. Las diferencias en la calidad de los micrófonos podrían haber influido en estos resultados.
+
+4. **Relación señal/ruido**: El tercer micrófono mostró la mejor relación señal/ruido. Aunque el procesamiento de ICA arrojó resultados aceptables, las diferencias entre los dispositivos impactaron el análisis final.
+
+5. **Importancia de la consistencia**: Es crucial utilizar dispositivos de captura consistentes para obtener datos más precisos y mejorar el rendimiento de algoritmos como ICA y beamforming.
 
 ## Requisitos
 - Pyton 3.9.0 ó superior
