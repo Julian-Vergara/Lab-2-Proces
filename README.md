@@ -231,3 +231,14 @@ Por otro lado, la siguiente gráfica muestra la amplitud con respecto a la frecu
 ![Gráfico de separacion por ICA](Sepp.png)
 
 Este gráfico representa las señales tras ser procesadas por el método ICA. Al escuchar los audios producidos por este proceso, se puede evidenciar que en cada uno de ellos una voz es más pronunciada. Sin embargo, hay una considerable distorsión y filtración de las otras voces en las grabaciones. Posiblemente, estos problemas se deban al uso de diferentes micrófonos.
+
+## Requisitos
+- Pyton 3.9.0 ó superior
+### Libreias:
+- numpy
+- matplotlib
+- soundfile
+- FastICA
+- fft, fftfreq
+## Contacto 
+est.julian.vergara@unimilitar.edu.co
