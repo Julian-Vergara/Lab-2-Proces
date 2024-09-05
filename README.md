@@ -261,3 +261,4 @@ Una vez que se ejecuta el código que realiza el proceso de ICA, y posteriorment
 - fft, fftfreq
 ## Contacto 
 est.julian.vergara@unimilitar.edu.co
+est.elizabeth.vill@unimilitar.edu.co
